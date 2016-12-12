@@ -12,23 +12,27 @@ const help = () => log(`
   mimetypes all
 `)
 
-if (!arg) {
+const main = (type) => {
+  if (!type) {
+    return help()
+  }
+
+  if (type === 'all') {
+    return log(JSON.stringify(types, null, 2))
+  }
+
+  if (types[type]) {
+    return log(`${type}: ${types[type]}`)
+  }
+
+  const getkeybyvalue = (object, value) =>
+    Object.keys(object).find(key => object[key] === value)
+
+  if (getkeybyvalue(types, type)) {
+    return log(getkeybyvalue(types, type))
+  }
+
   return help()
 }
 
-if (arg === 'all') {
-  return log(JSON.stringify(types, null, 2))
-}
-
-if (types[arg]) {
-  return log(`${arg}: ${types[arg]}`)
-}
-
-const getkeybyvalue = (object, value) =>
-  Object.keys(object).find(key => object[key] === value)
-
-if (getkeybyvalue(types, arg)) {
-  return log(getkeybyvalue(types, arg))
-}
-
-return help()
+main(arg)
