@@ -37,6 +37,7 @@ const mimeTypes = {
 , 'mp3':    'audio/mpeg'
 , 'flac':   'audio/flac'
 , 'm4a':    'audio/mp4'
+, 'aac':    'audio/aac'
 
   // video
 , 'ogv':    'video/ogg'
@@ -63,6 +64,7 @@ const mimeTypes = {
 , 'tar.gz': 'application/x-tar'
 , 'tgz':    'application/x-tar'
 , 'zip':    'application/zip'
+, '7z':     'application/x-7z-compressed'
 , 'exe':    'application/octet-stream'
 , 'dmg':    'application/octet-stream'
 , 'dll':    'application/octet-stream'
