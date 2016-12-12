@@ -1,6 +1,6 @@
 {
   "name": "mime-types-cli",
-  "description": "mime-types-cli",
+  "description": "mime types at the command line",
   "version": "0.0.1",
   "author": {
     "name": "Zac Anger",
@@ -9,9 +9,13 @@
   },
   "license": "WTFPL",
   "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "mimetypes": "./index.js",
+    "mime-types": "./index.js"
+  },
   "scripts": {
-    "start": "node index",
-    "test": ""
+    "test": "echo 'no sorry'"
   },
   "homepage": "https://github.com/zacanger/mime-types-cli#readme",
   "repository": {
@@ -20,8 +24,10 @@
   },
   "bugs": "https://github.com/zacanger/mime-types-cli/issues",
   "keywords": [
-    "",
-    "mime-types-cli"
+    "content",
+    "mime",
+    "mime-types-cli",
+    "types"
   ],
   "dependencies": {},
   "devDependencies": {},
