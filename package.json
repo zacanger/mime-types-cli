@@ -1,7 +1,7 @@
 {
   "name": "mime-types-cli",
-  "description": "mime types at the command line",
-  "version": "0.0.3",
+  "description": "Basic CLI for mime-types",
+  "version": "0.0.4",
   "author": {
     "name": "Zac Anger",
     "email": "zac@zacanger.com",
@@ -29,7 +29,9 @@
     "mime-types-cli",
     "types"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "mime-types": "^2.1.13"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=6.0.0"

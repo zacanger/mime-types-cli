@@ -2,7 +2,7 @@
 
 'use strict'
 
-const mimeTypes = require('./types')
+const { types } = require('mime-types')
 const arg = process.argv[2]
 const { log } = console
 const help = () => log(`
@@ -17,18 +17,18 @@ if (!arg) {
 }
 
 if (arg === 'all') {
-  return log(JSON.stringify(mimeTypes, null, 2))
+  return log(JSON.stringify(types, null, 2))
 }
 
-if (mimeTypes[arg]) {
-  return log(`${arg}: ${mimeTypes[arg]}`)
+if (types[arg]) {
+  return log(`${arg}: ${types[arg]}`)
 }
 
 const getkeybyvalue = (object, value) =>
   Object.keys(object).find(key => object[key] === value)
 
-if (getkeybyvalue(mimeTypes, arg)) {
-  return log(getkeybyvalue(mimeTypes, arg))
+if (getkeybyvalue(types, arg)) {
+  return log(getkeybyvalue(types, arg))
 }
 
 return help()
