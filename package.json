@@ -1,7 +1,7 @@
 {
   "name": "mime-types-cli",
   "description": "Basic CLI for mime-types",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": {
     "name": "Zac Anger",
     "email": "zac@zacanger.com",
