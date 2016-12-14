@@ -2,36 +2,45 @@
 
 'use strict'
 
-const { lookup, types } = require('mime-types')
+const {
+  charset,
+  contentType,
+  extension,
+  extensions,
+  lookup,
+  types
+} = require('mime-types')
 const { version } = require('./package.json')
 const arg = process.argv[2]
 const { log } = console
 const v = () => log(`mime-types-cli v ${version}`)
 const help = () => log(`
   mime-types-cli v ${version}
-  please provide an extension, or all
+  please provide an extension, types (all), or extensions (all)
   usage example:
   mimetypes html
   mimetypes application/xml
   mimetypes styles.css
-  mimetypes all
+  mimetypes types
+  mimetypes extensions
 `)
-
-const getKeyByValue = (object, value) =>
-  Object.keys(object).find(key => object[key] === value)
 
 const main = (type) => {
   if (!type) return help()
   if (type === '-v' || type === '--version') return v()
 
-  if (type === 'all') {
-    return log(JSON.stringify(types, null, 2))
-  }
+  if (type === 'extensions') return log(JSON.stringify(extensions, null, 2))
+  if (type === 'types') return log(JSON.stringify(types, null, 2))
 
   const lookupByType = lookup(type)
+  const lookupByExtension = extension(type)
+  const lookupByCharset = charset(type)
+  const lookupByContentType = contentType(type)
   if (lookupByType) return log(`${type}: ${lookupByType}`)
-  else if (getKeyByValue(types, type)) return log(getKeyByValue(types, type))
-  else return help()
+  if (lookupByExtension) return log(`${type}: ${lookupByExtension}`)
+  if (lookupByContentType) return log(`${type}: ${lookupByContentType}`)
+  if (lookupByCharset) return log(`${type}: ${lookupByCharset}`)
+  return help()
 }
 
 main(arg)

@@ -13,13 +13,14 @@ Simple CLI wrapper for [mime-types](https://github.com/jshttp/mime-types).
 ## Usage:
 
 ```shell
-  mime-types-cli
-  please provide an extension, or all
+  mime-types-cli v 0.1.0
+  please provide an extension, types (all), or extensions (all)
   usage example:
   mimetypes html
   mimetypes application/xml
   mimetypes styles.css
-  mimetypes all
+  mimetypes types
+  mimetypes extensions
 ```
 
 ## License:
