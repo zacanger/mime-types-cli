@@ -7,7 +7,7 @@
     "email": "zac@zacanger.com",
     "url": "http://zacanger.com"
   },
-  "license": "WTFPL",
+  "license": "MIT",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
@@ -31,7 +31,7 @@
     "types"
   ],
   "dependencies": {
-    "mime-types": "^2.1.14"
+    "mime-types": "2.1.17"
   },
   "devDependencies": {},
   "engines": {
