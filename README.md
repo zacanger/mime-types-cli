@@ -25,4 +25,4 @@ Simple CLI wrapper for [mime-types](https://github.com/jshttp/mime-types).
 
 ## License:
 
-WTFPL
+[MIT](./LICENSE.md)
