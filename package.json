@@ -3,16 +3,16 @@
   "description": "Basic CLI for mime-types",
   "version": "1.0.1",
   "author": {
-    "name": "Zac Anger",
     "email": "zac@zacanger.com",
+    "name": "Zac Anger",
     "url": "http://zacanger.com"
   },
   "license": "MIT",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "mimetypes": "./index.js",
-    "mime-types": "./index.js"
+    "mime-types": "./index.js",
+    "mimetypes": "./index.js"
   },
   "scripts": {
     "test": "echo 'no sorry'"
@@ -31,7 +31,7 @@
     "types"
   ],
   "dependencies": {
-    "mime-types": "2.1.17"
+    "mime-types": "2.1.24"
   },
   "devDependencies": {},
   "engines": {
