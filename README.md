@@ -23,6 +23,4 @@ Simple CLI wrapper for [mime-types](https://github.com/jshttp/mime-types).
   mimetypes extensions
 ```
 
-## License:
-
-[MIT](./LICENSE.md)
+[LICENSE](./LICENSE.md)
