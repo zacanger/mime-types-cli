@@ -1,20 +1,19 @@
 #!/usr/bin/env node
 
-'use strict'
-
 const {
   charset,
   contentType,
   extension,
   extensions,
   lookup,
-  types
+  types,
 } = require('mime-types')
 const { version } = require('./package.json')
 const arg = process.argv[2]
 const { log } = console
 const v = () => log(`mime-types-cli v ${version}`)
-const help = () => log(`
+const help = () =>
+  log(`
   mime-types-cli v ${version}
   please provide an extension, types (all), or extensions (all)
   usage example:
@@ -26,20 +25,36 @@ const help = () => log(`
 `)
 
 const main = (type) => {
-  if (!type) return help()
-  if (type === '-v' || type === '--version') return v()
+  if (!type) {
+    return help()
+  }
+  if (type === '-v' || type === '--version') {
+    return v()
+  }
 
-  if (type === 'extensions') return log(JSON.stringify(extensions, null, 2))
-  if (type === 'types') return log(JSON.stringify(types, null, 2))
+  if (type === 'extensions') {
+    return log(JSON.stringify(extensions, null, 2))
+  }
+  if (type === 'types') {
+    return log(JSON.stringify(types, null, 2))
+  }
 
   const lookupByType = lookup(type)
   const lookupByExtension = extension(type)
   const lookupByCharset = charset(type)
   const lookupByContentType = contentType(type)
-  if (lookupByType) return log(`${type}: ${lookupByType}`)
-  if (lookupByExtension) return log(`${type}: ${lookupByExtension}`)
-  if (lookupByContentType) return log(`${type}: ${lookupByContentType}`)
-  if (lookupByCharset) return log(`${type}: ${lookupByCharset}`)
+  if (lookupByType) {
+    return log(`${type}: ${lookupByType}`)
+  }
+  if (lookupByExtension) {
+    return log(`${type}: ${lookupByExtension}`)
+  }
+  if (lookupByContentType) {
+    return log(`${type}: ${lookupByContentType}`)
+  }
+  if (lookupByCharset) {
+    return log(`${type}: ${lookupByCharset}`)
+  }
   return help()
 }
 
