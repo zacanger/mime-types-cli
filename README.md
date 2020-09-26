@@ -15,7 +15,7 @@ Simple CLI wrapper for [mime-types](https://github.com/jshttp/mime-types).
 ## Usage:
 
 ```shell
-  mime-types-cli v 0.1.0
+  mime-types-cli
   please provide an extension, types (all), or extensions (all)
   usage example:
   mimetypes html
