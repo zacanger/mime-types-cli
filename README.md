@@ -4,6 +4,8 @@ Find out the correct type for a given extension.
 
 Simple CLI wrapper for [mime-types](https://github.com/jshttp/mime-types).
 
+[Donate](https://ko-fi.com/zacanger)
+
 --------
 
 ## Installation:
